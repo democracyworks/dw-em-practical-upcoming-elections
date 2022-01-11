@@ -1,0 +1,18 @@
+<div class="search-results">
+  <h1>{{title}}</h1>
+  {{#each elections}}
+    <p>Election: {{this.description}}</p>
+    <p>Election Date: {{this.date}}</p>
+    <a href={{this.polling-place-url}}>Polling Place</a>
+    {{#each this.district-divisions}}
+      <p>Authority: {{this.election-authority-level}}</p>
+      <h2>Registration Options:</h2>
+      {{#each this.voter-registration-methods}}
+        <h3>{{this.type}}</h3>
+        {{#each this.instructions}}
+          <p>{{this}}</p>
+        {{/each}}
+      {{/each}}
+    {{/each}}
+  {{/each}}
+</div>
