@@ -13,6 +13,8 @@ router.get("/", function (req, res, next) {
 function getOcdIds(city, stateAbbr) {
   var stateId = stateAbbr.toLowerCase();
   var cityId = city.toLowerCase().replace(" ", "_");
+  var ocdIdStatePrefix = "ocd-division/country:us/state:"
+  var ocdIdPlacePrefix = "/place:"
   var stateOcdId = ocdIdStatePrefix + stateId;
   var cityOcdId = stateOcdId + ocdIdPlacePrefix + cityId;
   return [stateOcdId, cityOcdId];
